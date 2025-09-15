@@ -1,0 +1,58 @@
+<!-- docs/index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>백준 문제풀이 스터디</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 840px; margin: 32px auto; padding: 0 16px; line-height: 1.6; }
+        h1 { margin-bottom: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+        .card { border: 1px solid #ddd; border-radius: 12px; padding: 12px; text-decoration: none; color: inherit; }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+        small { color: #666; }
+        .muted { color: #777; }
+        nav a { margin-right: 10px; }
+        footer { margin-top: 32px; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+<h1>백준 문제풀이 스터디 🚀</h1>
+<p class="muted">매일 1문제, <b>dayXX/이름.확장자</b>로 제출. 예: <code>day01/joseph.py</code>, <code>day01/minsu.c</code></p>
+
+<nav>
+    <a href="https://github.com/USERNAME/baekjoon-study" target="_blank">GitHub 레포</a>
+    <a href="#days">Days</a>
+</nav>
+
+<h2 id="days">Days</h2>
+<div id="dayGrid" class="grid"></div>
+
+<script>
+    // 필요에 따라 기간/시작일 바꿔도 됨
+    const TOTAL_DAYS = 30;
+
+    // 레포 기본 정보 (👉 USERNAME은 네 깃헙 아이디로 바꾸기)
+    const USERNAME = "w1nmuk";
+    const REPO = "baekjoon-study";
+    const BASE = `https://github.com/${USERNAME}/${REPO}/tree/main`;
+
+    const grid = document.getElementById("dayGrid");
+    for (let i = 1; i <= TOTAL_DAYS; i++) {
+        const day = String(i).padStart(2, "0");
+        const link = `${BASE}/day${day}`;
+        const a = document.createElement("a");
+        a.className = "card";
+        a.href = link;
+        a.target = "_blank";
+        a.innerHTML = `<b>Day ${day}</b><br><small>폴더 열기</small>`;
+        grid.appendChild(a);
+    }
+</script>
+
+<footer>
+    업데이트: Git에 푸시하면 자동 반영됩니다.
+</footer>
+</body>
+</html>
